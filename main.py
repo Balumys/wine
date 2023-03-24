@@ -1,6 +1,7 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from date_functions import get_years_since_foundation_text
+import pandas as pd
 
 env = Environment(
     loader=FileSystemLoader('.'),
@@ -9,8 +10,12 @@ env = Environment(
 
 template = env.get_template('template.html')
 
+wines = pd.read_excel("wine.xlsx", names=["Title", "Variety", "Price", "Image"]).to_dict(orient="records")
+
+
 rendered_page = template.render(
     year=get_years_since_foundation_text(),
+    wines=wines
 )
 
 with open('index.html', 'w', encoding="utf8") as file:
