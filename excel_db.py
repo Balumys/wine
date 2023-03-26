@@ -2,7 +2,8 @@ import pandas as pd
 
 
 def get_product_data():
-    wines_df = pd.read_excel("wine2.xlsx", names=["Category", "Title", "Variety", "Price", "Image"], na_values=' ',
+    wines_df = pd.read_excel("wine3.xlsx", names=["Category", "Title", "Variety", "Price", "Image", "Sales"],
+                             na_values=' ',
                              keep_default_na=False)
     grouped_df = wines_df.groupby('Category')
 
