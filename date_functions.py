@@ -3,12 +3,12 @@ import datetime as dt
 
 def get_year_suffix(year: int):
     if 11 <= year % 100 <= 14:
-        return str("лет")
+        return "лет"
     if year % 10 in [2, 3, 4]:
-        return str("года")
+        return "года"
     if year % 10 == 1:
-        return str("год")
-    return str("лет")
+        return "год"
+    return "лет"
 
 
 def get_years_since_foundation_text():
