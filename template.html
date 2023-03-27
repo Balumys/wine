@@ -91,23 +91,23 @@
                 </div>
             </div>
             {% for group,wines in products.items() %}
-            <div class="col-12 section-title text-center mb-5">
+              <div class="col-12 section-title text-center mb-5">
                 <h2 class="d-block">{{group}}</h2>
                 <div class="row">
                     {% for wine in wines %}
-                    <div class="col-lg-4 mb-5 col-md-6">
+                      <div class="col-lg-4 mb-5 col-md-6">
                         <div class="wine_v_1 text-center pb-4 pt-5">
                             <img src="images/{{wine.Image}}" alt="Image" class="img-fluid">
                             {% if wine.Sales %}
-                            <img src="assets/profitable.png"
+                              <img src="assets/profitable.png"
                                  style="width:10rem;height: 10rem;position:absolute;right: -20px;top: -20px;">
                             {% endif %}
                             <div>
                                 <h3 class="heading mt-3 mb-3 text-dark">{{wine.Title}}</h3>
                                 {% if wine.Variety %}
-                                <p>
-                                    {{wine.Variety}}<br/>
-                                    {% endif %}
+                                  <p>
+                                      {{wine.Variety}}<br/>
+                                {% endif %}
                                     <span class="price">{{wine.Price}}</span>
                                 </p>
                             </div>
