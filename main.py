@@ -14,7 +14,7 @@ if __name__ == "__main__":
     template = env.get_template('template.html')
     settings = Env()
     settings.read_env()
-    db_file = settings.str("DB_FILE")
+    db_file = settings.str("DB_FILE", "wine3.xlsx")
     field_names = settings.list("FIELD_NAMES", ["Category", "Title", "Variety", "Price", "Image", "Sales"])
 
     rendered_page = template.render(
